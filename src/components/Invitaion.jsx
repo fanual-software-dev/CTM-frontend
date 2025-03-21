@@ -58,6 +58,7 @@ const Invitaion = () => {
                 setLoading(false)
                 setError(false)
                 setInvitee('')
+                setError(data.message)
                 
             }
 
