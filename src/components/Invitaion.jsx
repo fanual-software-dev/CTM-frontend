@@ -49,7 +49,7 @@ const Invitaion = () => {
                     'Content-Type':'application/json',
                     'Authorization':`Bearer ${token}`
                 },
-                body:JSON.stringify({email:invitee})
+                body:JSON.stringify({email:invitee,gid:localStorage.getItem('gid')})
             })
 
             const data = await response.json()

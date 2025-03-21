@@ -1,6 +1,6 @@
 // function to fetch groups
 
-import { GroupHook } from "../contexts/GroupContext"
+
 
 export const Groupfetch = async ()=>{
     const {user,token} = JSON.parse(localStorage.getItem('user'))
