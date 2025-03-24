@@ -1,6 +1,6 @@
 {
     "rewrites": [
-      { "source": "/(.*)", "destination": "/join/group" }
+      { "source": "/(.*)", "destination": "/index.html" }
     ]
   }
   
