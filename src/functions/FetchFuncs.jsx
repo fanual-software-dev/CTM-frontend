@@ -25,7 +25,7 @@ export const fetchTasks = async (id,token)=>{
 export const fetchMembers = async(role,token)=>{
     if (role==='admin'){
         
-        const memeberusers = await fetch('http://localhost:4000/api/users',{
+        const memeberusers = await fetch('https://ctm-backend.vercel.app/api/users',{
             method:'POST',
             body:JSON.stringify({gid:localStorage.getItem('gid')}),
             headers:{
