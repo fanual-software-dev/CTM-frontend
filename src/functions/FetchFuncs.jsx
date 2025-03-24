@@ -25,7 +25,9 @@ export const fetchTasks = async (id,token)=>{
 export const fetchMembers = async(role,token)=>{
     if (role==='admin'){
         
-        const memeberusers = await fetch('https://ctm-backend.vercel.app/api/users',{
+        const memeberusers = await fetch('http://localhost:4000/api/users',{
+            method:'POST',
+            body:JSON.stringify({gid:localStorage.getItem('gid')}),
             headers:{
                 'Content-Type':'application/json',
                 'Authorization':`Bearer ${token}`
@@ -35,27 +37,28 @@ export const fetchMembers = async(role,token)=>{
         const memberData = await memeberusers.json()
 
         if (memeberusers.ok){
+            return memberData
 
-            let membersInfo = []
+            // let membersInfo = []
 
-            for ( let i in memberData){
+            // for ( let i in memberData){
 
-                const meminfo = await fetch(`https://ctm-backend.vercel.app/api/user/${memberData[i]._id}`,{
-                    headers:{
-                        'Content-Type':'application/json',
-                        'Authorization':`Bearer ${token}`
-                    }
-                }
-                )
+            //     const meminfo = await fetch(`https://ctm-backend.vercel.app/api/user/${memberData[i]._id}`,{
+            //         headers:{
+            //             'Content-Type':'application/json',
+            //             'Authorization':`Bearer ${token}`
+            //         }
+            //     }
+            //     )
 
-                const meminfodata = await meminfo.json()
+            //     const meminfodata = await meminfo.json()
 
-                if (meminfo.ok){
-                    membersInfo.push(meminfodata)
-                }
-            }
+            //     if (meminfo.ok){
+            //         membersInfo.push(meminfodata)
+            //     }
+            // }
 
-            return membersInfo
+            // return membersInfo
         }
 
         return null

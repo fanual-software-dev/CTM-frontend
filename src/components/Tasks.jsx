@@ -98,7 +98,7 @@ const Tasks = () => {
     try {
       const res = await fetch('http://localhost:4000/api/create-task',{
         method:'POST',
-        body:JSON.stringify({title,description,priority,assignee,dueDate}),
+        body:JSON.stringify({title,description,priority,assignee,dueDate,gid:localStorage.getItem('gid')}),
         headers:{
           'Content-Type':'application/json',
           'Authorization':`Bearer ${token}`
